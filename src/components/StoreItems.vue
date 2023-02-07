@@ -35,7 +35,6 @@
 
 <style scoped>
   .all-products{
-    /* background-color: grey; */
     overflow: hidden;
   }
 </style>
