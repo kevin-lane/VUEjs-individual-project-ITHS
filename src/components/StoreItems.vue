@@ -28,8 +28,11 @@
 <template>
     <h1>{{text}}</h1>
     <article  class="all-products">
-      <!-- v-bind and v-for is used here -->
-      <ProductCard v-for="product in products" :name="product.title" :desc="product.description" :price="product.price" :image="product.image" />
+      <!-- v-bind, v-for and v-if is used here -->
+      <section v-if="products === null">
+        <p>LOADING....</p>
+      </section>
+      <ProductCard v-else v-for="product in products" :name="product.title" :desc="product.description" :price="product.price" :image="product.image" />
     </article >
 </template>
 
