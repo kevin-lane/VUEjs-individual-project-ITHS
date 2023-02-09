@@ -3,11 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue';
 import StoreItems from './components/StoreItems.vue';
 console.log("TEST");
-fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => {
-              console.log(json)
-            })
 </script>
 
 <template>
