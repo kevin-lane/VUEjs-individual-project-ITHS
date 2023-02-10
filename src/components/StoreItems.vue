@@ -1,8 +1,7 @@
 <script setup>
   import axios from 'axios'
   import ProductCard from '../components/ProductCard.vue'
-  import SearchFilter from '../components/SearchFilter.vue'
-
+  import store from '../store';
 </script>
 <script>
   export default {
@@ -17,7 +16,8 @@
       //Filters between different categories
       filteredCategories(){
         return this.products.filter(i => this.checkedCategories.includes(i.category))
-      }
+      },
+
     },
     methods:{
       fetchProducts(){
@@ -28,6 +28,16 @@
               console.log(this.products);
             })
       },
+      navigateToProduct(id, title, description, price, image){
+        console.log("Product clicked " + id);
+        console.log("Title: " + title);
+
+        console.log(store.state.title);
+        store.state.title = title;
+        console.log("After state change: " + store.state.title);
+
+        this.$router.push('/products/' + id)
+      }
     },
     created() {
       this.fetchProducts();
@@ -65,6 +75,7 @@
       <ProductCard
         v-else-if="this.$refs.electronicsCheck.checked"
         v-for="product in filteredCategories"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -76,6 +87,7 @@
       <ProductCard
         v-else-if="this.$refs.jeweleryCheck.checked"
         v-for="product in filteredCategories"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -87,6 +99,7 @@
       <ProductCard
         v-else-if="this.$refs.clothesCheck.checked"
         v-for="product in filteredCategories"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -98,6 +111,7 @@
       <ProductCard
         v-else
         v-for="product in products"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"

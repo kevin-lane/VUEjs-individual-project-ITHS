@@ -32,8 +32,8 @@
 <template>
   <section id="product-item">
     <!-- v-bind is used here, v-bind:src -->
-    <img :src="image" alt="">
-    <h3 id="name-container">{{name}}</h3>
+    <img :src="image" width="200" height="200" alt="">
+    <h3 id="name-container">{{ name }}</h3>
     <p id="description-container">{{ desc }}</p>
     <p >{{ category }}</p>
     <h3 id="price-container">${{ price }}</h3>
