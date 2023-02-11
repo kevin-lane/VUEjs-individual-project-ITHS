@@ -1,5 +1,6 @@
-<script>
+<script setup>
   import { RouterLink, RouterView } from 'vue-router'
+  import CartIcon from './icons/CartIcon.vue';
 </script>
 
 <template>
@@ -8,6 +9,7 @@
     <li><RouterLink to="/products">Products</RouterLink></li>
     <li><RouterLink to="/about">About</RouterLink></li>
     <li><RouterLink to="/contact">Contact</RouterLink></li>
+    <CartIcon />
   </nav>
   <RouterView />
 </template>

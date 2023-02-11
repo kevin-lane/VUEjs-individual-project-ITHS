@@ -1,31 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue';
-import StoreItems from './components/StoreItems.vue';
-console.log("TEST");
+  import { RouterLink, RouterView } from 'vue-router'
+  import NavBar from './components/NavBar.vue';
 </script>
 
 <template>
-    <!-- <header> -->
       <NavBar />
-    <!-- </header> -->
-
-
-    <!-- <h1>HEADER</h1> -->
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
-    <!-- <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div> -->
-
-  <!-- <RouterView /> -->
-  <!-- <div>
-    <StoreItems />
-  </div> -->
 </template>
 
 <style scoped>

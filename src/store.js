@@ -5,15 +5,17 @@ const mutations = {
     // increment(state) {
     //   state.counter += 1
     // },
-    navigateToProduct(state, {id, title, price, image}){
+    navigateToProduct(state, {id, title, description, price, image}){
       console.log(state);
       console.log(id);
       console.log(title);
+      console.log(description);
       console.log(price);
       console.log(image);
 
       state.id = id;
       state.title = title;
+      state.description = description;
       state.price = price;
       state.image = image
       console.log("State after change: " + state.id);
@@ -24,7 +26,7 @@ const mutations = {
     // counter: 0,
     id: 0,
     title: '',
-    description: 'TEST',
+    description: '',
     price: 0,
     image: ''
   }

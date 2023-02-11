@@ -44,7 +44,7 @@
   #product-item{
     background-color: #f2f2f2;
     width: 20rem;
-    height: 45rem;
+    height: 30rem;
     margin: 2rem;
     padding: 1rem;
     border-radius: 1rem;
