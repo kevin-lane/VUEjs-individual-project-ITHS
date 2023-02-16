@@ -53,7 +53,6 @@
       <input v-model="checkedCategories" type="checkbox" id="jewelery" value="jewelery" ref="jeweleryCheck">
       <label for="jewelery">Jewelery</label>
     </span>
-    <p>Chosen category is: {{ checkedCategories }}</p>
   </fieldset>
   <article  class="all-products">
       <!-- v-bind, v-for and v-if is used here -->
@@ -63,7 +62,7 @@
       <ProductCard
         v-else-if="this.$refs.electronicsCheck.checked"
         v-for="product in filteredCategories"
-        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'description':product.description, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -74,7 +73,7 @@
       <ProductCard
         v-else-if="this.$refs.jeweleryCheck.checked"
         v-for="product in filteredCategories"
-        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'description':product.description, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -85,7 +84,7 @@
       <ProductCard
         v-else-if="this.$refs.clothesCheck.checked"
         v-for="product in filteredCategories"
-        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'description':product.description, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
@@ -96,7 +95,7 @@
       <ProductCard
         v-else
         v-for="product in products"
-        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title, 'price':product.price, 'image':product.image})"
+        @click="$store.commit('navigateToProduct', {'id':product.id, 'title':product.title,'description':product.description, 'price':product.price, 'image':product.image})"
         :id="product.id"
         :name="product.title"
         :desc="product.description"
