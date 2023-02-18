@@ -1,10 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import MainBanner from '../components/MainBanner.vue';
 </script>
 
 <template>
-  <main>
-    <!-- <TheWelcome /> -->
-    <h1>This is Home</h1>
+  <main class="home-main">
+    <MainBanner />
   </main>
 </template>

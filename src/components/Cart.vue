@@ -53,37 +53,64 @@
 <!-- Custom event is recieved here -->
 <template>
   <div id="cart">
-    <h2>Your cart</h2>
+    <h2>CART</h2>
     <CloseIconLg @click="visible = !visible" />
     <span v-if="cartItems.length === 0">Your cart is empty</span>
-    <ul v-else>
-      <li v-for="item in cartItems">
-        <CartItem
-          @increase-by="item.quantity++"
-          @decrease-by="item.quantity === 1 ? deleteItem(item.id) : item.quantity--"
-          :id="item.id"
-          :name="item.title"
-          :price="item.price"
-          :image="item.image"
-          :quantity="item.quantity"
-        />
-      </li>
-      <h2>Total sum: ${{ calcTotalSum }}</h2>
-    </ul>
+    <div v-else>
+      <ul>
+        <li v-for="item in cartItems">
+          <CartItem
+            @increase-by="item.quantity++"
+            @decrease-by="item.quantity === 1 ? deleteItem(item.id) : item.quantity--"
+            :id="item.id"
+            :name="item.title"
+            :price="item.price"
+            :image="item.image"
+            :quantity="item.quantity"
+          />
+        </li>
+      </ul>
+      <span id="total-price-label">Total: ${{ calcTotalSum.toFixed(2) }}</span>
+      <button type="button" id="checkout-btn" class="btn btn-success">Checkout</button>
+    </div>
+
   </div>
 </template>
 
-<style>
+<style scoped>
   #cart{
     display: none;
+    border-left: 1px solid cornflowerblue;
     height: 100%;
     width: 30rem;
     background-color: white;
     position: fixed;
     z-index: 1;
+    overflow-y: scroll;
     top: 0;
     right: 0;
     padding-top: 2rem;
     padding-left: 1rem;
+  }
+  #cart li{
+    display: block;
+    list-style-type: none;
+    background-color: cornsilk;
+    border: 1px solid green;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    right: 1rem;
+  }
+  #checkout-btn{
+    position: absolute;
+    right: 1rem;
+  }
+  #total-price-label{
+    font-size: x-large;
+    font-style: italic;
+    color: green;
+    position: absolute;
+    left: 3rem;
   }
 </style>

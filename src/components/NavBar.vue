@@ -5,10 +5,10 @@
 
 <template>
   <nav>
-    <li><RouterLink to="/">Home</RouterLink></li>
-    <li><RouterLink to="/products">Products</RouterLink></li>
-    <li><RouterLink to="/about">About</RouterLink></li>
-    <li><RouterLink to="/contact">Contact</RouterLink></li>
+    <li><RouterLink to="/">HOME</RouterLink></li>
+    <li><RouterLink to="/products">PRODUCT</RouterLink></li>
+    <li><RouterLink to="/about">ABOUT</RouterLink></li>
+    <li><RouterLink to="/contact">CONTACT</RouterLink></li>
     <CartIcon />
   </nav>
   <RouterView />
@@ -16,14 +16,13 @@
 
 <style scoped>
   nav{
-    background-color: #ffddff;
+    background-color: aliceblue;
     margin-left: 0rem;
     top: 0;
     text-align: center;
-    /* height: 50%; */
     padding: 1rem;
     border-bottom: 2px solid blueviolet;
-    /* width: 100%;*/
+    box-shadow: 0 4px 20px -4px blueviolet;
   }
   li {
     list-style: none;

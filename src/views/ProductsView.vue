@@ -4,7 +4,6 @@
 
 <template>
   <main>
-    <h1>Products</h1>
     <StoreItems />
   </main>
 </template>

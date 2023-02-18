@@ -52,8 +52,8 @@
     float: left;
   }
   #name-container{
-    font-weight: 900;
     text-transform: uppercase;
+    font-size: large;
   }
   #description-container{
     white-space: nowrap;
@@ -70,6 +70,5 @@
   }
   img{
     max-width: 100%;
-    /* max-height: auto; */
   }
 </style>

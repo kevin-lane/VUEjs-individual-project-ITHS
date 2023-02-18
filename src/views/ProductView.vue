@@ -3,11 +3,33 @@
 </script>
 
 <template>
-  <h1>Clicked Product</h1>
-  <img :src="$store.state.image" width="300" height="300" class="rounded float-start" alt="product-image" />
-  <h1>{{ $store.state.title }}</h1>
-  <p>ID: {{ $store.state.id }}</p>
-  <p>{{ $store.state.description }}</p>
-  <h3>${{ $store.state.price }}</h3>
-  <button @click="$store.commit('addToCart', {'id':$store.state.id, 'title':$store.state.title, 'price':$store.state.price, 'image':$store.state.image, 'quantity':$store.state.quantity})" type="button" class="btn btn-primary">Add to Cart</button>
+  <div id="product-site">
+    <h1>{{ $store.state.title }}</h1>
+    <img :src="$store.state.image" width="300" height="300" class="rounded float-start" alt="product-image" />
+
+    <p>ID: {{ $store.state.id }}</p>
+
+    <section>
+      <strong id="price-tag">${{ $store.state.price }}</strong>
+      <button id="add-to-cart-btn" @click="$store.commit('addToCart', {'id':$store.state.id, 'title':$store.state.title, 'price':$store.state.price, 'image':$store.state.image, 'quantity':$store.state.quantity})" type="button" class="btn btn-primary">Add to Cart</button>
+    </section>
+
+  </div>
+  <p id="description-section">{{ $store.state.description }}</p>
 </template>
+
+<style scoped>
+  #product-site{
+    padding: 5rem;
+  }
+  #price-tag{
+    font-size: xxx-large;
+    color: green;
+  }
+  #add-to-cart-btn{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+
+</style>
